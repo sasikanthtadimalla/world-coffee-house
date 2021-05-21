@@ -1,0 +1,63 @@
+<%- include("header-1") -%>
+<title>Explore Coffee - World Coffee House</title>
+<%- include("header-2") -%>
+<!-- Native CSS -->
+<link rel="stylesheet" href="css/cart.css">
+</head>
+
+<body>
+
+<section id="top-section">
+
+  <%- include("navbar-logged-in") -%>
+
+  <div class="top-div">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <img class="thank-you" src="images/thank you.jpg" alt="">
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="inner-div">
+            <h1 class=" brown">Thank You!</h1>
+            <div class="">
+              <div class="address-title">
+                <h3>Expect Delivery By</h3>
+              </div>
+              <div class="address-body">
+                <h4 class="date"></h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-lg view-btn" type="button" onclick="window.location.href='/orders'">View Your Orders</button>
+  </div>
+</<section>
+
+<%- include("footer") -%>
+
+<script type="text/javascript">
+
+  let monthYear = new Date();
+
+  let options = {
+      month: "long",
+      year: "numeric"
+  };
+
+  let date = new Date();
+  date.setDate(date.getDate() + 5);
+
+  $(".date").text(date.getDate() + " " + monthYear.toLocaleDateString("en-US", options));
+
+</script>
+<script src="js/coffee-beans.js" charset="utf-8"></script>
+<script src="js/cart.js" charset="utf-8"></script>
+<script src="js/confirmation.js" type="text/javascript">
+
+</script>
+</body>
+
+</html>

@@ -134,15 +134,6 @@ form button {
   border-radius: 0 !important;
 }
 
-.dropdown-toggle, .dropdown-toggle:focus {
-  background-color: #85603f !important;
-  box-shadow: none;
-}
-
-.dropdown-item {
-  text-align: center;
-}
-
 @media (max-width: 500px) {
   form button {
     margin: 0 auto;

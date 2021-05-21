@@ -96,8 +96,14 @@
  }
 
  .dropdown-menu {
-   min-width: 60px;
+   min-width: 90px;
    letter-spacing: 2px;
+   text-align: center;
+   padding: 0;
+ }
+
+ .dropdown-item:hover {
+   cursor: pointer;
  }
 
  img {
@@ -192,6 +198,18 @@
    border-radius: 0;
    position: absolute;
    top: -2rem;
+ }
+
+ .wishlisted {
+   color: brown !important;
+ }
+
+ .false {
+   color: #ffe6ca;
+ }
+
+ .true {
+   color: red;
  }
 
  .wishlist-btn:hover {

@@ -1,0 +1,64 @@
+<%- include("header-1") -%>
+<title>Explore Coffee - World Coffee House</title>
+<%- include("header-2") -%>
+<!-- Native CSS -->
+<link rel="stylesheet" href="css/cart.css">
+<style media="screen">
+  .top-div {
+    padding: 10rem;
+  }
+
+  @media (max-width: 500px) {
+    .top-div {
+      padding: 5rem;
+    }
+  }
+
+  @media (max-width: 321px) {
+    .top-div {
+      padding: 2rem;
+    }
+  }
+  h1 {
+    margin-bottom: 5rem;
+  }
+</style>
+</head>
+
+<body>
+
+<section id="top-section">
+
+  <%- include("navbar-logged-in") -%>
+
+  <div class="top-div">
+    <h1>Thank you for submitting</h1>
+    <h4>We'll get back to you within <span class="coffee brown">48 hours</span></h4>
+  </div>
+</<section>
+
+<%- include("footer") -%>
+
+<script type="text/javascript">
+
+  let monthYear = new Date();
+
+  let options = {
+      month: "long",
+      year: "numeric"
+  };
+
+  let date = new Date();
+  date.setDate(date.getDate() + 5);
+
+  $(".date").text(date.getDate() + " " + monthYear.toLocaleDateString("en-US", options));
+
+</script>
+<script src="js/coffee-beans.js" charset="utf-8"></script>
+<script src="js/cart.js" charset="utf-8"></script>
+<script src="js/confirmation.js" type="text/javascript">
+
+</script>
+</body>
+
+</html>

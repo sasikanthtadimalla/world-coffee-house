@@ -1,0 +1,296 @@
+body {
+  background-color: #ffefcf;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  letter-spacing: 3px;
+}
+
+@media (max-width: 484px) {
+  .h1-2 {
+    margin-top: 8rem;
+  }
+}
+
+.cart-link, .orders-link {
+  color: cornsilk !important;
+  border-bottom: 1px solid;
+}
+
+.top-div {
+  padding: 5rem 10rem;
+}
+
+@media (max-width: 1291px) {
+  .top-div {
+    padding: 5rem 8rem;
+  }
+}
+
+@media (max-width: 1025px) {
+  .top-div {
+    padding: 5rem 6rem;
+  }
+}
+
+@media (max-width: 1025px) {
+  .top-div {
+    padding: 5rem 3rem;
+  }
+}
+
+@media (max-width: 769px) {
+  .top-div {
+    padding: 5rem 2rem;
+  }
+}
+
+@media (max-width: 361px) {
+  .top-div {
+    padding: 5rem 1rem;
+  }
+}
+
+table {
+  table-layout: fixed;
+  margin: 7rem 0 !important;
+}
+
+@media (max-width: 769px) {
+  table {
+    margin: 5rem 0 !important;
+  }
+}
+
+@media (max-width: 500px) {
+  *::-webkit-scrollbar {
+    height: 5px;
+    padding: 0;
+  }
+}
+
+th {
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  color: brown;
+  text-align: center;
+  border-top: 3px brown solid !important;
+  border-bottom: 3px brown solid !important;
+}
+
+@media (max-width: 1025px) {
+  th {
+    font-size: 1.2rem;
+  }
+}
+
+tr, td {
+  border-top: none !important;
+}
+
+td {
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  text-align: center;
+  vertical-align: middle !important;
+}
+
+@media (max-width: 1025px) {
+  td {
+    font-size: 1rem;
+  }
+}
+
+tfoot td {
+  font-size: 1.5rem;
+  border-top: 3px solid !important;
+  border-bottom: 3px brown solid !important;
+  color: brown;
+}
+
+@media (max-width: 1025px) {
+  tfoot td {
+    font-size: 1.2rem;
+  }
+}
+
+img {
+  width: 40%;
+}
+
+@media (max-width: 500px) {
+  img {
+    width: 80%;
+  }
+}
+
+.proceed-btn {
+  margin: 2.5rem auto 0;
+  width: 10rem;
+  background-color: #ff7a00;
+  color: white;
+  border: 3px #ff7a00 solid;
+  letter-spacing: 2px;
+  font-size: 1.1rem;
+  border-radius: 0;
+  display: block;
+}
+
+@media (max-width: 1025px) {
+  .proceed-btn {
+    width: 10rem;
+  }
+}
+
+@media (max-width: 769px) {
+  .proceed-btn {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 484px) {
+  .proceed-btn {
+    margin-top: 5rem;
+  }
+}
+
+.proceed-btn:hover {
+  background-color: transparent;
+  color: brown;
+  border-color: brown;
+}
+
+.proceed-btn:focus {
+  box-shadow: none;
+}
+
+.delete {
+  opacity: 0.2;
+  color: brown;
+}
+
+.delete:hover {
+  opacity: 1;
+  color: brown;
+}
+
+.order-btn {
+  margin: auto;
+  width: 5rem;
+  background-color: brown;
+  color: white;
+  border: 3px brown solid;
+  letter-spacing: 2px;
+  font-size: 1.1rem;
+  border-radius: 0;
+  display: block;
+}
+
+.order-btn:hover {
+  background-color: transparent;
+  color: brown;
+  border-color: brown;
+}
+
+.order-btn:focus {
+  box-shadow: none;
+}
+
+.address-div {
+  margin: 5rem 10rem;
+}
+
+@media (max-width: 500px) {
+  .address-div {
+    margin: 5rem 0;
+  }
+}
+
+h3, h4 {
+  margin: 0;
+}
+
+.address-title {
+  background-color: #d0af84;
+  color: brown;
+  padding: 1rem;
+  border: 3px #d0af84 solid;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: none;
+}
+
+.address-body {
+  padding: 1rem;
+  border: 3px #d0af84 solid;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top: none;
+}
+
+.thank-you {
+  width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  .thank-you {
+    content: url(../images/thank-you-small.jpg);
+  }
+}
+
+.col-md-6 {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 769px) {
+  .col-md-6 {
+    width: 100%;
+  }
+
+  .col-md-6:nth-child(2) {
+    margin-top: 5rem;
+  }
+}
+
+.inner-div {
+  margin: auto;
+}
+
+.inner-div h1 {
+  margin-bottom: 4rem;
+}
+
+.inner-div div:nth-child(1) {
+  margin-top: 4rem;
+}
+
+.view-btn {
+  margin: 10rem auto 2rem;
+  width: 15rem;
+  background-color: brown;
+  color: white;
+  border: 3px brown solid;
+  letter-spacing: 2px;
+  font-size: 1.1rem;
+  border-radius: 0;
+  display: block;
+}
+
+@media (max-width: 769px) {
+  .view-btn {
+    margin: 5rem auto 2rem;
+  }
+}
+
+.view-btn:hover {
+  background-color: transparent;
+  color: brown;
+  border-color: brown;
+}
+
+.view-btn:focus {
+  box-shadow: none;
+}

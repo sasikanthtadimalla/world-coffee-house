@@ -1,0 +1,62 @@
+
+  <%- include("header-1") -%>
+  <title>Explore Beans - World Coffee House</title>
+  <%- include("header-2") -%>
+  <!-- Native CSS -->
+  <link rel="stylesheet" href="css/coffee-beans.css">
+</head>
+
+<body>
+
+  <section id="top-section">
+
+    <%- include("navbar") -%>
+    <div class="top-div">
+      <h1>The <span class="underline brown">Purest</span> Coffee Beans You'll Ever Brew</h1>
+
+      <h4>Select From The <span class="underline brown">Broadest</span> Range of Coffee Beans</h4>
+
+      <div class="container-fluid main-content">
+        <% for (let i = 0; i < beans.length; i++) { %>
+        <div class="row">
+          <% for (let j = 0; j < beans[i].length; j++) { %>
+          <div class="col-md-4 col-sm-12">
+            <form action="/beans" method="post">
+
+              <!-- <button class="btn btn-lg wishlist-btn <%= beans[i][j].wishlist %>" type="button" name="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"> <i class="fas fa-heart"></i> </button> -->
+              <img src="<%= beans[i][j].imgSrc %>" alt="beans-img">
+              <input type="hidden" name="beansVariety" value="<%= beans[i][j].name %>">
+              <h3><%= beans[i][j].name %></h3>
+              <h5><%= beans[i][j].price %> &nbsp; / &nbsp; Kg</h5>
+              <input type="hidden" name="pricePerKG" value="<%= beans[i][j].price %>">
+              <div class="dropdown">
+                <button name="button1" value="abcd" class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Qty
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" name="qty" value="1">1 Kg</a>
+                  <a class="dropdown-item" name="qty" value="2">2 Kg</a>
+                  <a class="dropdown-item" name="qty" value="3">3 Kg</a>
+                  <a class="dropdown-item" name="qty" value="4">4 Kg</a>
+                  <a class="dropdown-item" name="qty" value="5">5 Kg</a>
+                </div>
+                <input class="hidden-input" type="hidden" name="qty">
+              </div>
+
+                <button class="btn btn-lg add-btn" type="submit">Add To Cart</button>
+
+            </form>
+          </div>
+          <% } %>
+        </div>
+        <% } %>
+      </div>
+    </div>
+
+  </section>
+
+  <%- include("footer") -%>
+  <script src="js/coffee-beans.js" charset="utf-8"></script>
+</body>
+
+</html>
