@@ -1,0 +1,73 @@
+Breakpoints:
+
+1) index.html
+  1st BP: 1281px -> DONE
+  2nd BP: 1025px -> DONE
+  3rd BP: 769px -> DONE
+  4th BP: 500px -> DONE (413px earlier)
+  5th BP: 394px -> DONE
+  6th BP: 361px -> DONE
+  7th BP: 321px -> DONE
+
+2) login.html
+  1st BP: 1281px -> DONE
+  2nd BP: 1025px -> DONE
+  3rd BP: 769px -> DONE
+  4th BP: 500px -> DONE
+  5th BP: 394px -> DONE
+  6th BP: 361px -> DONE
+  7th BP: 321px -> DONE
+
+3) dealership.html
+  1st BP: 1281px -> DONE
+  2nd BP: 1025px -> DONE
+  3rd BP: 769px -> DONE
+  4th BP: 500px -> DONE
+  5th BP: 394px -> DONE
+  6th BP: 361px -> DONE
+  7th BP: 321px -> DONE
+
+4) contact.html
+  1st BP: 1281px -> DONE
+  2nd BP: 1025px -> DONE
+  3rd BP: 769px -> DONE
+  4th BP: 500px -> DONE
+  5th BP: 394px -> DONE
+  6th BP: 361px -> DONE
+  7th BP: 321px -> DONE
+
+5) coffee.html
+  1st BP: 1281px -> DONE
+  2nd BP: 1025px -> DONE
+  3rd BP: 769px -> DONE
+  4th BP: 500px -> DONE
+  5th BP: 394px -> DONE
+  6th BP: 361px -> DONE
+  7th BP: 321px -> DONE
+
+6) beans.html
+1st BP: 1281px -> DONE
+2nd BP: 1025px -> DONE
+3rd BP: 769px -> DONE
+4th BP: 500px -> DONE
+5th BP: 394px -> DONE
+6th BP: 361px -> DONE
+7th BP: 321px -> DONE
+
+7) bulk.html
+1st BP: 1281px -> DONE
+2nd BP: 1025px -> DONE
+3rd BP: 769px -> DONE
+4th BP: 500px -> DONE
+5th BP: 394px -> DONE
+6th BP: 361px -> DONE
+7th BP: 321px -> DONE
+
+8) about.html
+1st BP: 1281px -> DONE
+2nd BP: 1025px -> DONE
+3rd BP: 769px -> DONE
+4th BP: 500px -> DONE
+5th BP: 394px -> DONE
+6th BP: 361px -> DONE
+7th BP: 321px -> DONE

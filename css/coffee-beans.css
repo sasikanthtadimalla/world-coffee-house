@@ -1,0 +1,226 @@
+ body {
+   background-color: #ffefcf;
+ }
+
+ h1 {
+   font-size: 3rem;
+   letter-spacing: 3px;
+ }
+
+ /**************************************************** NAVIGATION BAR *****************************************************/
+ .coffee-link, .beans-link {
+   color: cornsilk !important;
+   border-bottom: 1px solid;
+ }
+
+ /******************************************************** TOP SECTION *******************************************************/
+ #top-section {
+   text-align: center;
+ }
+
+ .top-div {
+   padding: 10rem 10rem 0 !important;
+ }
+
+ @media (max-width: 1281px) {
+   .top-div {
+     padding: 10rem 6rem 0 !important;
+   }
+ }
+
+ @media (max-width: 1025px) {
+   .top-div {
+     padding: 6rem 6rem 0 !important;
+   }
+ }
+
+ @media (max-width: 769px) {
+   .top-div {
+     padding: 6rem 10rem 3rem !important;
+   }
+ }
+
+ @media (max-width: 500px) {
+   .top-div {
+     padding: 6rem 3rem 3rem !important;
+   }
+ }
+
+ @media (max-width: 500px) {
+   .top-div {
+     padding: 6rem 2rem 3rem !important;
+   }
+ }
+
+ @media (max-width: 361px) {
+   .top-div {
+     padding: 6rem 1rem 3rem !important;
+   }
+ }
+
+ .underline {
+   border-bottom: solid;
+   color: brown;
+ }
+
+ .main-content {
+   padding: 7rem 0 0;
+ }
+
+ .dropdown {}
+
+ @media (max-width: 769px) {
+   .dropdown {
+     margin-left: 2rem;
+   }
+ }
+
+ .dropdown-toggle {
+   width: 90px;
+   background-color: transparent;
+   color: black;
+   border: 3px black solid;
+   letter-spacing: 2px;
+   box-shadow: none;
+ }
+
+ .dropdown-toggle:hover {
+   background-color: brown;
+   border-color: brown;
+ }
+
+ .dropdown-toggle:focus {
+   background-color: brown !important;
+   border-color: brown !important;
+   box-shadow: none;
+ }
+
+ .dropdown-menu {
+   min-width: 60px;
+   letter-spacing: 2px;
+ }
+
+ img {
+   width: 80%;
+   margin-bottom: 3rem;
+ }
+
+ h3 {
+   letter-spacing: 5px;
+   color: brown;
+ }
+
+ h4 {
+   margin-top: 5rem;
+   letter-spacing: 1px;
+ }
+
+ h5 {
+   margin: 2rem 0;
+   letter-spacing: 1px;
+ }
+
+ @media (max-width: 769px) {
+   h5 {
+     margin-right: 2rem;
+   }
+ }
+
+ .add-btn {
+   margin: 2.5rem auto 0;
+   width: 40%;
+   background-color: #ff7a00;
+   color: white;
+   border: 3px #ff7a00 solid;
+   letter-spacing: 2px;
+   font-size: 1.1rem;
+   border-radius: 0;
+   display: block;
+ }
+
+ @media (max-width: 1025px) {
+   .add-btn {
+     width: 10rem;
+   }
+ }
+
+ @media (max-width: 769px) {
+   .add-btn {
+     margin-top: 1rem;
+   }
+ }
+
+ .add-btn:hover {
+   background-color: transparent;
+   color: brown;
+   border-color: brown;
+ }
+
+ .add-btn:focus {
+   box-shadow: none;
+ }
+
+ .col-md-4 {
+   position: relative;
+ }
+
+ @media (max-width: 1025px) {
+   .col-md-4 {
+     padding: 0;
+   }
+ }
+
+ @media (max-width: 1025px) {
+   .col-md-4 {
+     margin-bottom: 5rem;
+   }
+ }
+
+ .col-md-4 h5, .col-md-4 .dropdown {}
+
+ @media (max-width: 769px) {
+   .col-md-4 h5, .col-md-4 .dropdown {
+     display: inline-block;
+   }
+ }
+
+ .wishlist-btn {
+   margin-top: 2.5rem;
+   color: #ffe6ca;
+   letter-spacing: 2px;
+   font-size: 1.1rem;
+   border-radius: 0;
+   position: absolute;
+   top: -2rem;
+ }
+
+ .wishlist-btn:hover {
+   color: #ffe6ca;
+ }
+
+ .wishlist-btn:focus {
+   box-shadow: none;
+ }
+
+ #top-section .row {
+   margin-bottom: 10rem;
+ }
+
+ @media (max-width: 1025px) {
+   #top-section .row {
+     margin-bottom: 5rem;
+   }
+ }
+
+ @media (max-width: 769px) {
+   #top-section .row {
+     margin-bottom: 0;
+   }
+ }
+
+ @media (max-width: 769px) {
+   .top-div .col-md-4 {
+     width: 768px !important;
+     text-align: center;
+   }
+ }

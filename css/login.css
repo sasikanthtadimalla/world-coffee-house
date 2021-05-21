@@ -1,0 +1,157 @@
+
+/**************** TOP DIV ******************/
+.top-div {
+  padding: 5rem 10rem ;
+  text-align: center;
+  background-color: #ffefcf;
+  letter-spacing: 3px;
+}
+
+@media (max-width: 1281px) {
+  .top-div {
+    padding: 5rem 8rem ;
+  }
+}
+
+@media (max-width: 1025px) {
+  .top-div {
+    padding: 5rem 0 ;
+  }
+}
+
+@media (max-width: 769px) {
+  .top-div {
+    padding: 5rem 6rem ;
+  }
+}
+
+@media (max-width: 500px) {
+  .top-div {
+    padding: 5rem 0 ;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.col-md-6 {
+  padding: 0 7rem;
+}
+
+@media (max-width: 394px) {
+  .col-md-6 {
+    padding: 0 3rem;
+  }
+}
+
+.left {
+  border-right: 1px solid;
+}
+
+@media (max-width: 769px) {
+  .left {
+    border: none !important;
+    margin-bottom: 7rem;
+  }
+}
+
+@media (max-width: 321px) {
+  .left {
+    border: none !important;
+    margin-bottom: 5rem;
+  }
+}
+
+.right {
+  border-left: 1px solid;
+}
+
+@media (max-width: 769px) {
+  .right {
+    border: none !important;
+  }
+}
+
+.row {
+  position: relative;
+}
+
+form {
+  text-align: left;
+}
+
+@media (max-width: 769px) {
+  form {
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 500px) {
+  form {
+    text-align: center;
+  }
+}
+
+input {
+  letter-spacing: 2px;
+  display: inline;
+  font-family: 'Oswald', sans-serif;
+}
+
+h1 {
+  margin-bottom: 5rem;
+  color: brown;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    margin-bottom: 1rem;
+    color: brown;
+  }
+}
+
+@media (max-width: 321px) {
+  h1 {
+    margin-bottom: 1rem;
+  }
+}
+
+form button {
+  background-color: #ffefcf !important;
+  color: brown !important;
+  letter-spacing: 2px;
+  margin-top: 2rem;
+  border: 3px brown solid !important;
+  transition: 0.2s;
+}
+
+@media (max-width: 768px) {
+  form button {
+    margin-top: 1rem;
+  }
+}
+
+form button:hover {
+  background-color: #85603f !important;
+  color: white !important;
+  border-color: #85603f !important;
+}
+
+.input-group-text {
+  background-color: #85603f;
+  color: white;
+}
+
+@media (max-width: 769px) {
+  .top-div .col-md-6 {
+    width: 768px !important;
+    text-align: center;
+  }
+}
