@@ -45,7 +45,7 @@ input[type=number] {
   padding: 0 7rem;
 }
 
-@media (max-width: 394px) {
+@media (max-width: 500px) {
   .col-md-6 {
     padding: 0 3rem;
   }
@@ -181,5 +181,17 @@ form button:hover {
   .top-div .col-md-6 {
     width: 768px !important;
     text-align: center;
+  }
+}
+
+.errMsg {
+  margin-left: 3rem;
+  color: red;
+  display: block;  
+}
+
+@media (max-width: 769px) {
+  .errMsg {
+    text-align: left;
   }
 }

@@ -9,7 +9,7 @@
 <body>
   <section id="top-section">
 
-    <%- include("navbar") -%>
+    <%- include("navbar-logged-in") -%>
 
     <div class="top-div">
       <div class="container-fluid">
@@ -18,8 +18,8 @@
             <h1 class="title-text world">World's</h1>
             <h1 class="finest move-right">Finest</h1>
             <h1 class="title-text title-coffee">Coffee</h1>
-            <button type="button" class="btn btn-sm coffee-img-button" onclick="window.location.href='/coffee'">Coffee</button>
-            <button type="button" class="btn btn-sm coffee-img-button" onclick="window.location.href='/beans'">Beans</button>
+            <button type="button" class="btn btn-sm coffee-img-button" onclick="window.location.href='/coffee-logged-in'">Coffee</button>
+            <button type="button" class="btn btn-sm coffee-img-button" onclick="window.location.href='/beans-logged-in'">Beans</button>
           </div>
           <div class="main-img-div col-md-6 col-sm-12 ">
             <img class="img-1" src="images/home page/1.jpg" alt="coffee">
@@ -85,7 +85,7 @@
 
         </div>
       </div>
-      <button type="button" class="btn btn-lg coffee-img-button" onclick="window.location.href='/coffee'">Explore</button>
+      <button type="button" class="btn btn-lg coffee-img-button" onclick="window.location.href='/coffee-logged-in'">Explore</button>
     </div>
   </section>
 
@@ -156,7 +156,7 @@
 
         </div>
       </div>
-      <button type="button" class="btn btn-lg coffee-img-button" onclick="window.location.href='/beans'">Explore</button>
+      <button type="button" class="btn btn-lg coffee-img-button" onclick="window.location.href='/beans-logged-in'">Explore</button>
     </div>
   </section>
 
@@ -205,8 +205,8 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-6 col-sm-12">
-          <button type="button" class="btn btn-sm" onclick="window.location.href='/coffee'">Explore Coffee</button>
-          <button type="button" class="btn btn-sm coffee-img-button" onclick="window.location.href='/beans'">Explore Beans</button>
+          <button type="button" class="btn btn-sm" onclick="window.location.href='/coffee-logged-in'">Explore Coffee</button>
+          <button type="button" class="btn btn-sm coffee-img-button" onclick="window.location.href='/beans-logged-in'">Explore Beans</button>
         </div>
         <div class="col-md-6 col-sm-12">
         </div>
@@ -215,7 +215,7 @@
 
   </section>
 
-  <%- include("footer") -%>
+  <%- include("footer-logged-in") -%>
 
   <script src="js/home.js" charset="utf-8" type="text/javascript"></script>
 </body>

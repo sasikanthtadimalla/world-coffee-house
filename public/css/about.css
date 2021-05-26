@@ -128,7 +128,7 @@ h1 {
 
 @media screen and (max-width: 500px) {
   .offices {
-    content: url(../images/offices-small.png);
+    content: url(../images/offices-small.jpg);
     width: 100%;
   }
 }

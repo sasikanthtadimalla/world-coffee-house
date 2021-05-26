@@ -1,6 +1,6 @@
 
   <%- include("header-1") -%>
-  <title>Bulk Ordering - World Coffee House</title>
+  <title>Dealership - World Coffee House</title>
   <%- include("header-2") -%>
   <!-- Native CSS -->
   <link rel="stylesheet" href="css/dealership-bulk.css">
@@ -10,14 +10,14 @@
 <body>
   <section id="top-section">
 
-    <%- include("navbar") -%>
+    <%- include("navbar-logged-in") -%>
 
     <div class="top-div">
-      <h1>Contact For <span class="coffee brown">Bulk Ordering</span></h1>
+      <h1>Contact For <span class="coffee brown">Dealership</span></h1>
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-6 col-sm-12">
-            <form action="/bulk-ordering" method="post">
+            <form action="/dealership" method="post">
               <div class="form-group">
                 <label class="label" for="exampleInputPassword1">Name</label>
                 <input required name="name" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter name">
@@ -30,36 +30,24 @@
                 <label class="label" for="exampleInputPassword1">Location</label>
                 <input required name="location" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter location">
               </div>
-              <label class="scope label" for="">Select Qty:</label>
+              <label class="scope label" for="">Dealership Scope:</label>
               <div class="form-check radio">
-                <input class="form-check-input" type="radio" name="qty" id="exampleRadios2" value="20 Kg" checked>
+                <input class="form-check-input" type="radio" name="scope" id="exampleRadios2" value="national" checked>
                 <label class="form-check-label" for="exampleRadios1">
-                  20 Kg
+                  National
                 </label>
               </div>
               <div class="form-check radio">
-                <input class="form-check-input" type="radio" name="qty" id="exampleRadios2" value="30 Kg" checked>
+                <input class="form-check-input" type="radio" name="scope" id="exampleRadios3" value="international" checked>
                 <label class="form-check-label" for="exampleRadios1">
-                  30 Kg
-                </label>
-              </div>
-              <div class="form-check radio">
-                <input class="form-check-input" type="radio" name="qty" id="exampleRadios2" value="40 Kg" checked>
-                <label class="form-check-label" for="exampleRadios1">
-                  40 Kg
-                </label>
-              </div>
-              <div class="form-check radio">
-                <input class="form-check-input" type="radio" name="qty" id="exampleRadios2" value="50 Kg" checked>
-                <label class="form-check-label" for="exampleRadios1">
-                  > 50 Kg
+                  International
                 </label>
               </div>
               <button type="submit" class="btn btn-lg">Submit</button>
             </form>
           </div>
           <div class="col-md-6 col-sm-12">
-            <img src="images/sacks.jpg" alt="dealership">
+            <img src="images/handshake.jpg" alt="dealership">
           </div>
         </div>
       </div>
@@ -67,7 +55,8 @@
     </div>
   </section>
 
-  <%- include("footer") -%>
+  <%- include("footer-logged-in") -%>
+
   <script src="js/dealership-bulk.js" charset="utf-8"></script>
 </body>
 

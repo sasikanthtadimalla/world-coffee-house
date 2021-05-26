@@ -17,19 +17,16 @@
       <h4>Select From The <span class="underline brown">Widest</span> Range of Coffee Powders</h4>
 
       <div class="container-fluid main-content">
-        <% for (let i = 0; i < coffees.length; i++) { %>
+
         <div class="row">
-          <% for (let j = 0; j < coffees[i].length; j++) { %>
+          <% for (let i = 0; i < coffees.length; i++) { %>
           <div class="col-md-4 col-sm-12">
             <form action="/coffee" method="post">
-
-              <!-- <button class="btn btn-lg wishlist-btn <%= coffees[i][j].wishlist %>" type="submit" name="button" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= coffees[i][j].titleText %>"> <i class="fas fa-heart"></i> </button> -->
-              <!-- <input class="wishlistChecker" type="hidden" name="wishlist" value="<%= coffees[i][j].wishlist %>"> -->
-              <img src="<%= coffees[i][j].imgSrc %>" alt="coffee-img">
-              <input type="hidden" name="coffeeVariety" value="<%= coffees[i][j].name %>">
-              <h3><%= coffees[i][j].name %></h3>
-              <h5><%= coffees[i][j].price %> &nbsp; / &nbsp; Kg</h5>
-              <input type="hidden" name="pricePerKG" value="<%= coffees[i][j].price %>">
+              <img src="<%= coffees[i].imgSrc %>" alt="coffee-img">
+              <input type="hidden" name="coffeeVariety" value="<%= coffees[i].name %>">
+              <h3><%= coffees[i].name %></h3>
+              <h5><%= coffees[i].price %> &nbsp; / &nbsp; Kg</h5>
+              <input type="hidden" name="pricePerKG" value="<%= coffees[i].price %>">
               <div class="dropdown">
                 <button name="button1" value="abcd" class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Qty
@@ -43,20 +40,20 @@
                 </div>
                 <input class="hidden-input" type="hidden" name="qty">
               </div>
-
+              <div class="">
                 <button class="btn btn-lg add-btn" type="submit" >Add To Cart</button>
-
+              </div>
             </form>
           </div>
           <% } %>
         </div>
-        <% } %>
+
       </div>
     </div>
 
   </section>
 
-  <%- include("footer") -%>
+  <%- include("footer-logged-in") -%>
   <script src="js/coffee-beans.js" charset="utf-8"></script>
 </body>
 

@@ -17,20 +17,18 @@
       <h4>Select From The <span class="underline brown">Broadest</span> Range of Coffee Beans</h4>
 
       <div class="container-fluid main-content">
-        <% for (let i = 0; i < beans.length; i++) { %>
-        <div class="row">
-          <% for (let j = 0; j < beans[i].length; j++) { %>
-          <div class="col-md-4 col-sm-12">
-            <form action="/beans" method="post">
 
-              <!-- <button class="btn btn-lg wishlist-btn <%= beans[i][j].wishlist %>" type="button" name="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"> <i class="fas fa-heart"></i> </button> -->
-              <img src="<%= beans[i][j].imgSrc %>" alt="beans-img">
-              <input type="hidden" name="beansVariety" value="<%= beans[i][j].name %>">
-              <h3><%= beans[i][j].name %></h3>
-              <h5><%= beans[i][j].price %> &nbsp; / &nbsp; Kg</h5>
-              <input type="hidden" name="pricePerKG" value="<%= beans[i][j].price %>">
+        <div class="row">
+          <% for (let i = 0; i < beans.length; i++) { %>
+          <div class="col-md-4 col-sm-12">
+            <form action="/coffee" method="post">
+              <img src="<%= beans[i].imgSrc %>" alt="coffee-img">
+              <input type="hidden" name="coffeeVariety" value="<%= beans[i].name %>">
+              <h3><%= beans[i].name %></h3>
+              <h5><%= beans[i].price %> &nbsp; / &nbsp; Kg</h5>
+              <input type="hidden" name="pricePerKG" value="<%= beans[i].price %>">
               <div class="dropdown" data-bs-toggle="tooltip" data-bs-placement="top" title="Login to select">
-                <button disabled name="button1" value="abcd" class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button disabled name="button1" value="abcd" class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-bs-toggle="tooltip" data-bs-placement="top" title="Login to select">
                   Qty
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -43,13 +41,13 @@
                 <input class="hidden-input" type="hidden" name="qty">
               </div>
               <div class="" data-bs-toggle="tooltip" data-bs-placement="top" title="Login to select">
-                <button disabled class="btn btn-lg add-btn" type="submit">Add To Cart</button>
+                <button disabled class="btn btn-lg add-btn" type="submit" >Add To Cart</button>
               </div>
             </form>
           </div>
           <% } %>
         </div>
-        <% } %>
+
       </div>
     </div>
 

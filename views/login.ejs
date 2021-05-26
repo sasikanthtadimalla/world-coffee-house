@@ -21,27 +21,28 @@
 
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
-                  <input required name="name" type="text" class="form-control" id="exampleInputName" placeholder="Name">
+                  <input required name="name" type="text" class="form-control" id="exampleInputName" placeholder="Name" value="<%= name %>">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><i class="fas fa-phone"></i></span>
-                  <input required name="contact" type="number" class="form-control contact" id="exampleInputContact" placeholder="Contact number" maxlength="10" >
+                  <input required name="contact" type="number" class="form-control contact" id="exampleInputContact" placeholder="Contact number" maxlength="10"  value="<%= contact %>">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><i class="fas fa-map-marker-alt"></i>&nbsp;</span>
-                  <input required name="address" type="text" class="form-control" id="exampleInputAddress" placeholder="Address">
+                  <input required name="address" type="text" class="form-control" id="exampleInputAddress" placeholder="Address"  value="<%= address %>">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><i class="fas fa-at"></i></span>
-                  <input required name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                  <input required name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email"  value="<%= email %>">
+                </div>
+                <span class="errMsg"><%= errMsg %></span>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
+                  <input required name="password" type="password" class="form-control" id="Password1" placeholder="Password"  value="<%= password %>">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
-                  <input required name="password" type="password" class="form-control" id="Password1" placeholder="Password">
-                </div>
-                <div class="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
-                  <input required type="password" class="form-control" id="Password2" placeholder="Confirm password">
+                  <input required type="password" class="form-control" id="Password2" placeholder="Confirm password"  value="<%= password %>">
                 </div>
                 <div class="input-group mb-3 checkbox-div">
                   <div class="input-group-prepend">
@@ -61,12 +62,13 @@
               <form class="login-form" action="/login" method="post">
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><i class="fas fa-at"></i></span>
-                  <input required type="email" class="form-control" name="email" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Email">
+                  <input required type="email" class="form-control" name="email" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Email" value="<%= loginEmail %>">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
-                  <input required type="password" class="form-control" name="password" id="exampleInputPassword3" placeholder="Password">
+                  <input required type="password" class="form-control" name="password" id="exampleInputPassword3" placeholder="Password" value="<%= loginPassword %>">
                 </div>
+                <span class="errMsg"><%= loginErrMsg %></span>
                 <button type="submit" class="btn btn-lg">Log In</button>
               </form>
             </div>

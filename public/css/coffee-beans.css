@@ -36,25 +36,19 @@
 
  @media (max-width: 769px) {
    .top-div {
-     padding: 6rem 10rem 3rem !important;
+     padding: 6rem 10rem 0 !important;
    }
  }
 
  @media (max-width: 500px) {
    .top-div {
-     padding: 6rem 3rem 3rem !important;
-   }
- }
-
- @media (max-width: 500px) {
-   .top-div {
-     padding: 6rem 2rem 3rem !important;
+     padding: 6rem 2rem 0 !important;
    }
  }
 
  @media (max-width: 361px) {
    .top-div {
-     padding: 6rem 1rem 3rem !important;
+     padding: 6rem 1rem 0 !important;
    }
  }
 
@@ -77,9 +71,9 @@
 
  .dropdown-toggle {
    width: 90px;
-   background-color: transparent;
-   color: black;
-   border: 3px black solid;
+   background-color: brown;
+   color: white;
+   border: 3px brown solid;
    letter-spacing: 2px;
    box-shadow: none;
  }
@@ -92,7 +86,7 @@
  .dropdown-toggle:focus {
    background-color: brown !important;
    border-color: brown !important;
-   box-shadow: none;
+   box-shadow: none !important;
  }
 
  .dropdown-menu {
@@ -168,6 +162,7 @@
 
  .col-md-4 {
    position: relative;
+   margin-bottom: 10rem;
  }
 
  @media (max-width: 1025px) {
@@ -178,7 +173,7 @@
 
  @media (max-width: 1025px) {
    .col-md-4 {
-     margin-bottom: 5rem;
+     /* margin-bottom: 5rem; */
    }
  }
 
@@ -221,18 +216,18 @@
  }
 
  #top-section .row {
-   margin-bottom: 10rem;
+   /* margin-bottom: 10rem; */
  }
 
  @media (max-width: 1025px) {
    #top-section .row {
-     margin-bottom: 5rem;
+     /* margin-bottom: 5rem; */
    }
  }
 
  @media (max-width: 769px) {
    #top-section .row {
-     margin-bottom: 0;
+     /* margin-bottom: 0; */
    }
  }
 

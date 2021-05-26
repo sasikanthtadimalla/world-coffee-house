@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Database - WCH</title>
+    <link rel="stylesheet" href="css/db.css">
+    <link rel="icon" href="data:,">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+
+    <div class="coffee-div">
+      <h1>Coffees Database</h1>
+      <form class="" action="/coffeesDB" method="post">
+        <h3>Add Coffee</h3>
+        <input type="text" name="cimgSrc" placeholder="Image source" autocomplete="off">
+        <input type="text" name="cname" placeholder="Coffee name" autocomplete="off">
+        <input type="text" name="cprice" placeholder="Coffee price" autocomplete="off">
+        <input type="hidden" name="operation" value="addCoffee">
+        <button type="submit">Enter</button>
+      </form>
+      <form class="" action="/coffeesDB" method="post">
+        <h3>Update Coffee</h3>
+        <input class="search-bar" type="text" name="coffeeToUpdate" placeholder="Coffee to update" value="<%= coffeeToUpdate %>" autocomplete="off">
+        <button class="search" type="submit">Search</button>
+        <input type="text" name="cimgSrc" placeholder="Image source" value="<%= cimgSrc %>" autocomplete="off">
+        <input type="text" name="cname" placeholder="Coffee name" value="<%= cname %>" autocomplete="off">
+        <input type="text" name="cprice" placeholder="Coffee price" value="<%= cprice %>" autocomplete="off">
+        <input type="hidden" name="operation" value="updateCoffee">
+        <button type="submit">Enter</button>
+      </form>
+      <form class="" action="/coffeesDB" method="post">
+        <h3>Delete Coffee</h3>
+        <input type="text" name="cname" placeholder="Coffee name" autocomplete="off">
+        <input type="hidden" name="operation" value="deleteCoffee">
+        <button type="submit">Enter</button>
+      </form>
+    </div>
+
+    <div class="beans-div">
+      <h1>Beans Database</h1>
+      <form class="" action="/beansDB" method="post">
+        <h3>Add Beans</h3>
+        <input type="text" name="bimgSrc" placeholder="Image source" autocomplete="off">
+        <input type="text" name="bname" placeholder="Beans name" autocomplete="off">
+        <input type="text" name="bprice" placeholder="Beans price" autocomplete="off">
+        <input type="hidden" name="operation" value="addBeans">
+        <button type="submit">Enter</button>
+      </form>
+      <form class="" action="/beansDB" method="post">
+        <h3>Update Beans</h3>
+        <input class="search-bar" type="text" name="beansToUpdate" placeholder="Beans to update" value="<%= beansToUpdate %>" autocomplete="off">
+        <button class="search" type="submit">Search</button>
+        <input type="text" name="bimgSrc" placeholder="Image source" value="<%= bimgSrc %>" autocomplete="off">
+        <input type="text" name="bname" placeholder="Beans name" value="<%= bname %>" autocomplete="off">
+        <input type="text" name="bprice" placeholder="Beans price" value="<%= bprice %>" autocomplete="off">
+        <input type="hidden" name="operation" value="updateBeans">
+        <button type="submit">Enter</button>
+      </form>
+      <form class="" action="/beansDB" method="post">
+        <h3>Delete Beans</h3>
+        <input type="text" name="bname" placeholder="Beans name" autocomplete="off">
+        <input type="hidden" name="operation" value="deleteBeans">
+        <button type="submit">Enter</button>
+      </form>
+    </div>
+
+    <p><a href="/admin">Logout</a></p>
+
+  </body>
+</html>
