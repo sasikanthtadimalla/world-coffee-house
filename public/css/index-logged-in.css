@@ -1,0 +1,34 @@
+.customerName {
+  margin-bottom: 7rem;
+}
+
+/**************** TOP DIV ******************/
+.top-div {
+  padding: 1rem 10rem 5rem;
+  text-align: center;
+  background-color: #d0af84;
+}
+
+@media (max-width: 1281px) {
+  .top-div {
+    padding: 1rem 8rem 5rem;
+  }
+}
+
+@media (max-width: 1025px) {
+  .top-div {
+    padding: 0.5rem 6rem 5rem;
+  }
+}
+
+@media (max-width: 769px) {
+  .top-div {
+    padding: 0.5rem 3rem 5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .top-div {
+    padding: 0.5rem 1rem 5rem;
+  }
+}

@@ -24,3 +24,7 @@ $(".dropdown-item").click(function() {
   $(this).parent().parent().find(".dropdown-toggle").text($(this).text());
   $(this).parent().parent().find(".hidden-input").val($(this).parent().parent().find(".dropdown-toggle").text());
 });
+
+$(".add-btn").click(function() {
+  $(this).parent().parent().find(".hidden-input").val($(this).parent().parent().find(".dropdown-toggle").text());
+}); 

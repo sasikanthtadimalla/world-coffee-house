@@ -1,0 +1,24 @@
+NON USER:
+1) Home
+2) Coffee
+3) Beans
+4) About
+5) Contact
+6) Login
+7) Dealership
+8) Bulk Ordering
+9) Contact Confirmation
+
+USER:
+1) Home-logged-in
+2) Coffees-logged-in
+3) Beans-logged-in
+4) About-logged-in
+5) Contact-logged-in
+6) Bulk Ordering-logged-in
+7) Contact Confirmation-logged-in
+8) Dealership-logged-in
+9) Cart
+10) Confirmation
+11) Orders
+12) Logout

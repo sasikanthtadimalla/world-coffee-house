@@ -40,17 +40,25 @@
 
 <script type="text/javascript">
 
-  let monthYear = new Date();
+  // let monthYear = new Date();
+  // console.log(monthYear);
+  // let options = {
+  //     month: "long",
+  //     year: "numeric"
+  // };
+  //
+  // let date = new Date();
+  // date.setDate(new Date().getDate() + 5);
+  //
+  // $(".date").text(date.getDate() + " " + monthYear.toLocaleDateString("en-US", options));
 
-  let options = {
-      month: "long",
-      year: "numeric"
-  };
 
-  let date = new Date();
-  date.setDate(date.getDate() + 5);
 
-  $(".date").text(date.getDate() + " " + monthYear.toLocaleDateString("en-US", options));
+  const tomorrow = new Date()
+  tomorrow.setDate(new Date().getDate() + 5)
+  let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  // console.log(tomorrow.getDate() + " " + months[tomorrow.getMonth()] + " " + tomorrow.getFullYear());
+  $(".date").text(tomorrow.getDate() + " " + months[tomorrow.getMonth()] + " " + tomorrow.getFullYear())
 
 </script>
 <script src="js/coffee-beans.js" charset="utf-8"></script>

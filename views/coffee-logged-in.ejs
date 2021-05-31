@@ -23,14 +23,13 @@
           <div class="col-md-4 col-sm-12">
             <form action="/coffee" method="post">
               <img src="<%= coffees[i].imgSrc %>" alt="coffee-img">
-              <input type="hidden" name="coffeeVariety" value="<%= coffees[i].name %>">
+              <input type="hidden" name="imgSrc" value="<%= coffees[i].imgSrc %>">
+              <input type="hidden" name="product" value="<%= coffees[i].name %>">
               <h3><%= coffees[i].name %></h3>
-              <h5><%= coffees[i].price %> &nbsp; / &nbsp; Kg</h5>
-              <input type="hidden" name="pricePerKG" value="<%= coffees[i].price %>">
+              <h5>₹ <%= coffees[i].price %> &nbsp; / &nbsp; Kg</h5>
+              <input type="hidden" name="price" value="<%= coffees[i].price %>">
               <div class="dropdown">
-                <button name="button1" value="abcd" class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Qty
-                </button>
+                <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1 Kg</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" name="qty" value="1">1 Kg</a>
                   <a class="dropdown-item" name="qty" value="2">2 Kg</a>
@@ -39,6 +38,7 @@
                   <a class="dropdown-item" name="qty" value="5">5 Kg</a>
                 </div>
                 <input class="hidden-input" type="hidden" name="qty">
+                <input type="hidden" name="type" value="coffee">
               </div>
               <div class="">
                 <button class="btn btn-lg add-btn" type="submit" >Add To Cart</button>

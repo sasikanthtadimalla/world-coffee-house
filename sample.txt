@@ -1,0 +1,33 @@
+<tbody>
+  <% let totalQty = 0; %>
+  <% let totalPrice = 0; %>
+  <% items.forEach((item) => { %>
+    <tr>
+      <td><img src="<%= item.imgSrc %>" alt=""></td>
+      <input type="hidden" name="imgSrc" value="<%= item.imgSrc %>">
+      <td><%= item.product %></td>
+      <input type="hidden" name="product" value="<%= item.product %>">
+      <td class="price"><%= item.price %>/-</td>
+      <input type="hidden" name="price" value="<%= item.price %>">
+      <td class="qty"><%= item.qty %></td>
+      <input type="hidden" name="qty" value="<%= item.qty %>">
+      <td class="total"><%= item.total %>/-</td>
+      <input type="hidden" name="totalPrice" value="<%= item.total %>">
+      <td><button class="btn btn-sm delete" name="deleteOne" value="<%= item.id %>" type="submit" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="fas fa-trash"></i></button></td>
+    </tr>
+    <% totalQty = totalQty + parseInt(item.qty.slice(0, 1)); %>
+    <% totalPrice = totalPrice + parseInt(item.total); %>
+  <% }); %>
+
+</tbody>
+
+<tfoot>
+<tr>
+  <td>TOTAL:</td>
+  <td class="numberOfItems"><%= items.length %> Items</td>
+  <td>-</td>
+  <td><%= totalQty %> Kg</td>
+  <td>₹ <%= totalPrice %>/-</td>
+  <td><button class="btn btn-lg delete" name="deleteAll" value="deleteAll" type="submit"data-bs-toggle="tooltip" data-bs-placement="top" title="Empty cart"><i class="fas fa-trash"></i></button></td>
+</tr>
+</tfoot>

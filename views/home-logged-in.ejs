@@ -4,14 +4,14 @@
   <%- include("header-2") -%>
   <!-- Native CSS -->
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/index-logged-in.css">
 </head>
 
 <body>
   <section id="top-section">
-
     <%- include("navbar-logged-in") -%>
-
     <div class="top-div">
+      <h3 class="customerName">Hi, <span class="coffee brown"><%= customerName %></span></h3>
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-6 col-sm-12 title-div">

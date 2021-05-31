@@ -13,117 +13,90 @@
 
     <div class="top-div table-responsive">
       <form action="/cart" method="post">
-      <h1 class="h1-1">Your <span class="coffee brown">Cart</span></h1>
-      <div class="cart table-responsive">
-        <table class="table align-middle w-100 d-block d-md-table">
-          <thead>
-            <tr class="table-heading">
-              <th></th>
-              <th>Product</th>
-              <th>Price</th>
-              <th>Qty</th>
-              <th>Total</th>
-              <th></th>
-            </tr>
-          </thead>
-
-            <tbody>
-
-              <tr>
-                <td><img src="images/coffee section/cappuccino.jpg" alt=""></td>
-                <input type="hidden" name="imgSrc" value="images/coffee section/cappuccino.jpg">
-                <td>Cappuccino</td>
-                <input type="hidden" name="name" value="cappuccino">
-                <td>599</td>
-                <input type="hidden" name="price" value="599">
-                <td>4 Kg</td>
-                <input type="hidden" name="qty" value="4 Kg">
-                <td >2396</td>
-                <input type="hidden" name="totalPrice" value="2396">
-                <td><button class="btn btn-sm delete" type="submit" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="fas fa-trash"></i></button></td>
+        <h1 class="h1-1">Your <span class="coffee brown">Cart</span></h1>
+        <div class="cart table-responsive">
+          <table class="table align-middle w-100 d-block d-md-table d-sm-table">
+            <thead>
+              <tr class="table-heading">
+                <th></th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th>Total</th>
+                <th></th>
               </tr>
+            </thead>
+
+              <tbody>
+                <% let totalQty = 0; %>
+                <% let totalPrice = 0; %>
+                <% items.forEach((item) => { %>
+                  <tr>
+                    <td><img src="<%= item.imgSrc %>" alt=""></td>
+                    <input type="hidden" name="imgSrc" value="<%= item.imgSrc %>">
+                    <td><%= item.product %></td>
+                    <input type="hidden" name="product" value="<%= item.product %>">
+                    <td class="price"><%= item.price %>/-</td>
+                    <input type="hidden" name="price" value="<%= item.price %>">
+                    <td class="qty"><%= item.qty %></td>
+                    <input type="hidden" name="qty" value="<%= item.qty %>">
+                    <td class="total"><%= item.total %>/-</td>
+                    <input type="hidden" name="totalPrice" value="<%= item.total %>">
+                    <td><button class="btn btn-sm delete" name="deleteOne" value="<%= item.id %>" type="submit" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="fas fa-trash"></i></button></td>
+                  </tr>
+                  <% totalQty = totalQty + parseInt(item.qty.slice(0, 1)); %>
+                  <% totalPrice = totalPrice + parseInt(item.total); %>
+                <% }); %>
+
+            </tbody>
+
+            <tfoot>
               <tr>
-                <td><img src="images/coffee section/cappuccino.jpg" alt=""></td>
-                <input type="hidden" name="imgSrc" value="images/coffee section/cappuccino.jpg">
-                <td>Cappuccino</td>
-                <input type="hidden" name="name" value="cappuccino">
-                <td>599</td>
-                <input type="hidden" name="price" value="599">
-                <td>4 Kg</td>
-                <input type="hidden" name="qty" value="4 Kg">
-                <td >2396</td>
-                <input type="hidden" name="totalPrice" value="2396">
-                <td><button class="btn btn-sm delete" type="submit" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="fas fa-trash"></i></button></td>
+                <td>TOTAL:</td>
+                <td class="numberOfItems"><%= items.length %> Item(s)</td>
+                <td>-</td>
+                <td><%= totalQty %> Kg</td>
+                <input type="hidden" name="totalQty" value="<%= totalQty %>">
+                <td>₹ <%= totalPrice %>/-</td>
+                <input type="hidden" name="totalPrices" value="<%= totalPrice %>">
+                <td><button class="btn btn-lg delete" name="deleteAll" value="deleteAll" type="submit" data-bs-toggle="tooltip" data-bs-placement="top" title="Empty cart"><i class="fas fa-trash"></i></button></td>
               </tr>
-              <tr>
-                <td><img src="images/coffee section/cappuccino.jpg" alt=""></td>
-                <input type="hidden" name="imgSrc" value="images/coffee section/cappuccino.jpg">
-                <td>Cappuccino</td>
-                <input type="hidden" name="name" value="cappuccino">
-                <td>599</td>
-                <input type="hidden" name="price" value="599">
-                <td>4 Kg</td>
-                <input type="hidden" name="qty" value="4 Kg">
-                <td >2396</td>
-                <input type="hidden" name="totalPrice" value="2396">
-                <td><button class="btn btn-sm delete" type="submit" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="fas fa-trash"></i></button></td>
-              </tr>
-              <tr>
-                <td><img src="images/coffee section/cappuccino.jpg" alt=""></td>
-                <input type="hidden" name="imgSrc" value="images/coffee section/cappuccino.jpg">
-                <td>Cappuccino</td>
-                <input type="hidden" name="name" value="cappuccino">
-                <td>599</td>
-                <input type="hidden" name="price" value="599">
-                <td>4 Kg</td>
-                <input type="hidden" name="qty" value="4 Kg">
-                <td >2396</td>
-                <input type="hidden" name="totalPrice" value="2396">
-                <td><button class="btn btn-sm delete" type="submit" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="fas fa-trash"></i></button></td>
-              </tr>
-
-          </tbody>
-
-          <tfoot>
-            <tr>
-              <td>TOTAL</td>
-              <td>3 Items</td>
-              <td>-</td>
-              <td>12 Kg</td>
-              <td>7200</td>
-              <td><button class="btn btn-lg delete" type="submit"data-bs-toggle="tooltip" data-bs-placement="top" title="Empty cart"><i class="fas fa-trash"></i></button></td>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
-
-      <h1 class="h1-2">Confirm Order</h1>
-
-        <div class="address-div">
-          <div class="address-title">
-            <h3>Delivery Address</h3>
-          </div>
-          <div class="address-body">
-            <h4>Flat No 301, Sai Sadan Apts, 12-115, Dilsukhnagar, Hyderabad - 500060</h4>
-          </div>
+            </tfoot>
+          </table>
         </div>
 
+        <h1 class="h1-2">Confirm Order</h1>
 
-      <input id="orderID" type="hidden" name="orderID">
-      <input id="date" type="hidden" name="date">
-      <button class="btn btn-lg proceed-btn" type="submit">Confirm</button>
+          <div class="address-div">
+            <div class="address-title">
+              <h3>Delivery Details</h3>
+            </div>
+            <div class="name-div">
+              <h4><%= user.name %></h4>
+            </div>
+            <div class="contact-div">
+              <h4><%= user.contact %></h4>
+            </div>
+            <div class="address-body">
+              <h4><%= user.address %></h4>
+            </div>
+          </div>
+
+          <!-- <input id="orderID" type="hidden" name="orderID"> -->
+          <input id="date" type="hidden" name="date">
+          <button name="confirm" value="true" class="btn btn-lg proceed-btn" type="submit">Confirm</button>
       </form>
     </div>
 
   </<section>
 
   <%- include("footer-logged-in") -%>
-  
+
   <script type="text/javascript">
 
     let time = new Date();
 
-    $("#orderID").attr("value", time.getTime());
+    // $("#orderID").attr("value", time.getTime());
 
     let options = {
         year: "numeric",
