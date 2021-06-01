@@ -4,7 +4,7 @@ if ($(".h1-1").text() === "Your Cart" || $("h1").text() === "Your Cart") {
   $(".cart-link").removeClass("cart-link");
 }
 
-if ($(".numberOfItems").text() === "0 Items") {
+if ($(".numberOfItems").text() === "0 Item(s)") {
   $(".proceed-btn").prop("disabled", true);
 } else {
   $(".proceed-btn").prop("disabled", false);

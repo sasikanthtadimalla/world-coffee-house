@@ -44,6 +44,7 @@
                     <input type="hidden" name="totalPrice" value="<%= item.total %>">
                     <td><button class="btn btn-sm delete" name="deleteOne" value="<%= item.id %>" type="submit" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="fas fa-trash"></i></button></td>
                   </tr>
+                  <input type="hidden" name="type" value="<%= item.type %>">
                   <% totalQty = totalQty + parseInt(item.qty.slice(0, 1)); %>
                   <% totalPrice = totalPrice + parseInt(item.total); %>
                 <% }); %>
@@ -82,7 +83,6 @@
             </div>
           </div>
 
-          <!-- <input id="orderID" type="hidden" name="orderID"> -->
           <input id="date" type="hidden" name="date">
           <button name="confirm" value="true" class="btn btn-lg proceed-btn" type="submit">Confirm</button>
       </form>
@@ -95,8 +95,6 @@
   <script type="text/javascript">
 
     let time = new Date();
-
-    // $("#orderID").attr("value", time.getTime());
 
     let options = {
         year: "numeric",

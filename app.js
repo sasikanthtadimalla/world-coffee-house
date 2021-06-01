@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require("express");
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const _ = require("lodash");
 const session = require("express-session");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
@@ -77,13 +78,15 @@ const bulkOrderSchema = new mongoose.Schema({
 const coffeeSchema = new mongoose.Schema({
   imgSrc: String,
   name: String,
-  price: String
+  price: String,
+  stock: Number
 });
 
 const beanSchema = new mongoose.Schema({
   imgSrc: String,
   name: String,
-  price: String
+  price: String,
+  stock: Number
 });
 
 // -----------------------------------------DATABASE COLLECTIONS---------------------------------------------------
@@ -211,7 +214,13 @@ app.get("/:webpage", (req, res) => {
         if (err) {
           console.log(err);
         } else {
-          res.render("coffee-logged-in", {coffees: coffees});
+          let coffeesInStock = [];
+          coffees.forEach((coffee) => {
+            if (coffee.stock !== 0 && coffee.stock > 0) {
+              coffeesInStock.push(coffee);
+            }
+          });
+          res.render("coffee-logged-in", {coffees: coffeesInStock});
         }
       });
     } else if (req.params.webpage === "beans-logged-in") {
@@ -219,7 +228,13 @@ app.get("/:webpage", (req, res) => {
         if (err) {
           console.log(err);
         } else {
-          res.render("beans-logged-in", {beans: beans});
+          let beansInStock = [];
+          beans.forEach((bean) => {
+            if (bean.stock != 0) {
+              beansInStock.push(bean);
+            }
+          });
+          res.render("beans-logged-in", {beans: beansInStock});
         }
       });
     } else if (req.params.webpage === "contact-confirmation-logged-in") {
@@ -344,7 +359,7 @@ app.post("/admin", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
   if (email === "a@wch" && password === "123") {
-    res.render("db", {coffeeToUpdate: "", cimgSrc: "", cname: "", cprice: "", bimgSrc: "", bname: "", bprice: "", beansToUpdate: ""});
+    res.render("db", {coffeeToUpdate: "", cimgSrc: "", cname: "", cprice: "", cstock: "", bimgSrc: "", bname: "", bprice: "", bstock: "", beansToUpdate: ""});
   } else {
     res.redirect("/admin");
   }
@@ -355,17 +370,18 @@ app.post("/coffeesDB", (req, res) => {
   if (req.body.operation === "addCoffee") {
     const newCoffee = new Coffee ({
       imgSrc: req.body.cimgSrc,
-      name: req.body.cname,
-      price: req.body.cprice
+      name: _.startCase(req.body.cname),
+      price: req.body.cprice,
+      stock: req.body.cstock
     });
 
     newCoffee.save();
-    console.log("New coffee inserted (" + req.body.cname + ")");
-    res.render("db", {coffeeToUpdate: "", cimgSrc: "", cname: "", cprice: "", bimgSrc: "", bname: "", bprice: "", beansToUpdate: ""});
+    console.log("New coffee inserted (" + _.startCase(req.body.cname) + ")");
+    res.render("db", {coffeeToUpdate: "", cimgSrc: "", cname: "", cprice: "", cstock: "", bimgSrc: "", bname: "", bprice: "", bstock: "", beansToUpdate: ""});
   }
   else if (req.body.operation === "updateCoffee") {
-    if (req.body.cimgSrc === "" && req.body.cname === "" && req.body.cprice === "") {
-      Coffee.findOne({name: req.body.coffeeToUpdate}, (err, foundCoffee) => {
+    if (req.body.cimgSrc === "" && req.body.cname === "" && req.body.cprice === "" && req.body.cstock === "") {
+      Coffee.findOne({name: _.startCase(req.body.coffeeToUpdate)}, (err, foundCoffee) => {
         if (err) {
           console.log(err);
         } else if (foundCoffee) {
@@ -374,36 +390,39 @@ app.post("/coffeesDB", (req, res) => {
             cimgSrc: foundCoffee.imgSrc,
             cname: foundCoffee.name,
             cprice: foundCoffee.price,
+            cstock: foundCoffee.stock,
             beansToUpdate: "",
             bimgSrc: "",
             bname: "",
-            bprice: ""
+            bprice: "",
+            bstock: ""
           });
           console.log("Data rendered succesfully.");
         }
       });
     } else {
-      Coffee.updateOne({name: req.body.coffeeToUpdate}, {
+      Coffee.updateOne({name: _.startCase(req.body.coffeeToUpdate)}, {
         imgSrc: req.body.cimgSrc,
-        name: req.body.cname,
-        price: req.body.cprice
+        name: _.startCase(req.body.cname),
+        price: req.body.cprice,
+        stock: req.body.cstock,
       }, (err) => {
         if (err) {
           console.log(err);
         } else {
-          console.log("Updated successfully (" + req.body.coffeeToUpdate + ")");
-          res.render("db", {coffeeToUpdate: "", cimgSrc: "", cname: "", cprice: "", bimgSrc: "", bname: "", bprice: "", beansToUpdate: ""});
+          console.log("Updated successfully (" + _.startCase(req.body.coffeeToUpdate) + ")");
+          res.render("db", {coffeeToUpdate: "", cimgSrc: "", cname: "", cprice: "", cstock: "", bimgSrc: "", bname: "", bprice: "", bstock: "", beansToUpdate: ""});
         }
       });
     }
   }
   else if (req.body.operation === "deleteCoffee") {
-    Coffee.deleteMany({name: req.body.cname}, (err) => {
+    Coffee.deleteMany({name: _.startCase(req.body.cname)}, (err) => {
       if (err) {
         console.log(err);
       } else {
-        console.log("Deleted coffee (" + req.body.cname + ")");
-        res.render("db", {coffeeToUpdate: "", cimgSrc: "", cname: "", cprice: "", bimgSrc: "", bname: "", bprice: "", beansToUpdate: ""});
+        console.log("Deleted coffee (" + _.startCase(req.body.cname) + ")");
+        res.render("db", {coffeeToUpdate: "", cimgSrc: "", cname: "", cprice: "", cstock: "", bimgSrc: "", bname: "", bprice: "", bstock: "", beansToUpdate: ""});
       }
     });
   }
@@ -414,17 +433,18 @@ app.post("/beansDB", (req, res) => {
   if (req.body.operation === "addBeans") {
     const newBeans = new Bean ({
       imgSrc: req.body.bimgSrc,
-      name: req.body.bname,
-      price: req.body.bprice
+      name: _.startCase(req.body.bname),
+      price: req.body.bprice,
+      stock: req.body.bstock
     });
 
     newBeans.save();
-    console.log("New beans inserted (" + req.body.bname + ")");
-    res.render("db", {coffeeToUpdate: "", cimgSrc: "", cname: "", cprice: "", bimgSrc: "", bname: "", bprice: "", beansToUpdate: ""});
+    console.log("New beans inserted (" + _.startCase(req.body.bname) + ")");
+    res.render("db", {coffeeToUpdate: "", cimgSrc: "", cname: "", cprice: "", cstock: "", bimgSrc: "", bname: "", bprice: "", bstock: "", beansToUpdate: ""});
   }
   else if (req.body.operation === "updateBeans") {
-    if (req.body.bimgSrc === "" && req.body.bname === "" && req.body.bprice === "") {
-      Bean.findOne({name: req.body.beansToUpdate}, (err, foundBeans) => {
+    if (req.body.bimgSrc === "" && req.body.bname === "" && req.body.bprice === "" && req.body.bstock === "") {
+      Bean.findOne({name: _.startCase(req.body.beansToUpdate)}, (err, foundBeans) => {
         if (err) {
           console.log(err);
         } else if (foundBeans) {
@@ -433,36 +453,39 @@ app.post("/beansDB", (req, res) => {
             bimgSrc: foundBeans.imgSrc,
             bname: foundBeans.name,
             bprice: foundBeans.price,
+            bstock: foundBeans.stock,
             coffeeToUpdate: "",
             cimgSrc: "",
             cname: "",
             cprice: "",
+            cstock: ""
           });
           console.log("Data rendered succesfully.");
         }
       });
     } else {
-      Bean.updateOne({name: req.body.beansToUpdate}, {
+      Bean.updateOne({name: _.startCase(req.body.beansToUpdate)}, {
         imgSrc: req.body.bimgSrc,
-        name: req.body.bname,
-        price: req.body.bprice
+        name: _.startCase(req.body.bname),
+        price: req.body.bprice,
+        stock: req.body.bstock
       }, (err) => {
         if (err) {
           console.log(err);
         } else {
-          console.log("Updated successfully (" + req.body.beansToUpdate + ")");
-          res.render("db", {coffeeToUpdate: "", cimgSrc: "", cname: "", cprice: "", bimgSrc: "", bname: "", bprice: "", beansToUpdate: ""});
+          console.log("Updated successfully (" + _.startCase(req.body.beansToUpdate) + ")");
+          res.render("db", {coffeeToUpdate: "", cimgSrc: "", cname: "", cprice: "", cstock: "", bimgSrc: "", bname: "", bprice: "", bstock: "", beansToUpdate: ""});
         }
       });
     }
   }
   else if (req.body.operation === "deleteBeans") {
-    Bean.deleteMany({name: req.body.bname}, (err) => {
+    Bean.deleteMany({name: _.startCase(req.body.bname)}, (err) => {
       if (err) {
         console.log(err);
       } else {
-        console.log("Deleted beans (" + req.body.bname + ")");
-        res.render("db", {coffeeToUpdate: "", cimgSrc: "", cname: "", cprice: "", bimgSrc: "", bname: "", bprice: "", beansToUpdate: ""});
+        console.log("Deleted beans (" + _.startCase(req.body.bname) + ")");
+        res.render("db", {coffeeToUpdate: "", cimgSrc: "", cname: "", cprice: "", cstock: "", bimgSrc: "", bname: "", bprice: "", bstock: "", beansToUpdate: ""});
       }
     });
   }
@@ -572,22 +595,6 @@ app.post("/beans", (req, res) => {
     }
   });
 
-  // const newCart = new Cart({
-  //   imgSrc: req.body.imgSrc,
-  //   product: req.body.product,
-  //   price: req.body.price,
-  //   qty: req.body.qty,
-  //   username: req.user.username
-  // });
-  //
-  // newCart.save((err) => {
-  //   if (err) {
-  //     console.log(err);
-  //   } else {
-  //     res.redirect("/beans-logged-in");
-  //     console.log("Cart updated: (" + req.user.username + ")");
-  //   }
-  // });
 });
 
 app.post("/cart", (req, res) => {
@@ -635,6 +642,87 @@ app.post("/cart", (req, res) => {
       if (err) {
         console.log(err);
       } else {
+
+        if (Array.isArray(req.body.product)) {
+          for (let i = 0; i < req.body.product.length; i++) {
+            let product = req.body.product[i];
+            let qty = parseInt(req.body.qty[i].slice(0,1));
+            let type = req.body.type[i];
+
+            if (type === "coffee") {
+              let newStock = 0;
+              Coffee.findOne({name: product}, (err, foundCoffee) => {
+                newStock = foundCoffee.stock - qty;
+                Coffee.updateOne({name: product}, {
+                  stock: newStock
+                },
+                (err) => {
+                  if (err) {
+                    console.log(err);
+                  } else {
+                    console.log("Stock updated - coffee");
+                  }
+                });
+              });
+            }
+
+            if (type === "beans") {
+              let newStock = 0;
+              Bean.findOne({name: product}, (err, foundBean) => {
+                newStock = foundBean.stock - qty;
+                Bean.updateOne({name: product}, {
+                  stock: newStock
+                },
+                (err) => {
+                  if (err) {
+                    console.log(err);
+                  } else {
+                    console.log("Stock updated - bean");
+                  }
+                });
+              })
+            }
+          }
+        } else {
+          let type = req.body.type;
+          let product = req.body.product;
+          let qty = parseInt(req.body.qty.slice(0,1));
+
+          if (type === "coffee") {
+            let newStock = 0;
+            Coffee.findOne({name: product}, (err, foundCoffee) => {
+              newStock = foundCoffee.stock - qty;
+              Coffee.updateOne({name: product}, {
+                stock: newStock
+              },
+              (err) => {
+                if (err) {
+                  console.log(err);
+                } else {
+                  console.log("Stock updated - coffee");
+                }
+              });
+            });
+          }
+
+          if (type === "beans") {
+            let newStock = 0;
+            Bean.findOne({name: product}, (err, foundBean) => {
+              newStock = foundBean.stock - qty;
+              Bean.updateOne({name: product}, {
+                stock: newStock
+              },
+              (err) => {
+                if (err) {
+                  console.log(err);
+                } else {
+                  console.log("Stock updated - bean");
+                }
+              });
+            });
+          }
+        }
+
         Cart.deleteMany({username: req.user.username}, (err) => {
           if (err) {
             console.log(err);
@@ -643,14 +731,14 @@ app.post("/cart", (req, res) => {
             res.redirect("/confirmation");
           }
         });
+
       }
     });
   }
 });
 
 app.post("/orders/:orderID", (req, res) => {
-  // console.log(req.body);
-  // console.log(req.params.orderID);
+
   Order.findOne({_id: req.params.orderID}, (err, foundOrder) => {
     if (err) {
       console.log(err);

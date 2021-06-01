@@ -1,6 +1,6 @@
 CSS Files:--------2964 lines of code so far
-JS Files:---------139 lines of code so far
-EJS Files:--------2078 lines of code so far
-SERVER FILE:------693 lines of code so far
+JS Files:---------121 lines of code so far
+EJS Files:--------2080 lines of code so far
+SERVER FILE:------781 lines of code so far
 
-TOTAL:------------5874 lines of code so far
+TOTAL:------------5946 lines of code so far
