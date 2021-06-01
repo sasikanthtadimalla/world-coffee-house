@@ -1,11 +1,1 @@
-let viewportSize = $(window).width();
-
-if (viewportSize < 400) {
-  $("h1 span").removeClass("coffee");
-}
-
-if ($("h1").text() === "Contact For Dealership") {
-  $(".bulk-link").removeClass("bulk-link");
-} else if ($("h1").text() === "Contact For Bulk Ordering") {
-  $(".dealership-link").removeClass("dealership-link");
-}
+let viewportSize=$(window).width();viewportSize<400&&$("h1 span").removeClass("coffee"),"Contact For Dealership"===$("h1").text()?$(".bulk-link").removeClass("bulk-link"):"Contact For Bulk Ordering"===$("h1").text()&&$(".dealership-link").removeClass("dealership-link");

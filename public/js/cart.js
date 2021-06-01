@@ -1,16 +1,1 @@
-if ($(".h1-1").text() === "Your Cart" || $("h1").text() === "Your Cart") {
-  $(".orders-link").removeClass("orders-link");
-} else if ($(".h1-1").text() === "Your Orders" || $("h1").text() === "Your Orders") {
-  $(".cart-link").removeClass("cart-link");
-}
-
-if ($(".numberOfItems").text() === "0 Item(s)") {
-  $(".proceed-btn").prop("disabled", true);
-} else {
-  $(".proceed-btn").prop("disabled", false);
-}
-
-if ($(".order").text() === "Order") {
-  $(".orders-link").removeClass("orders-link");
-  $(".cart-link").removeClass("cart-link");
-}
+"Your Cart"===$(".h1-1").text()||"Your Cart"===$("h1").text()?$(".orders-link").removeClass("orders-link"):"Your Orders"!==$(".h1-1").text()&&"Your Orders"!==$("h1").text()||$(".cart-link").removeClass("cart-link"),"0 Item(s)"===$(".numberOfItems").text()?$(".proceed-btn").prop("disabled",!0):$(".proceed-btn").prop("disabled",!1),"Order"===$(".order").text()&&($(".orders-link").removeClass("orders-link"),$(".cart-link").removeClass("cart-link"));

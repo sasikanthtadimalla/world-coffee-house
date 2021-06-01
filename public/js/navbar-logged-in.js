@@ -1,5 +1,1 @@
-let viewportWidth = $(window).width();
-
-if (viewportWidth < 992) {
-  $(".seperator").remove();
-}
+let viewportWidth=$(window).width();viewportWidth<992&&$(".seperator").remove();
